@@ -6,6 +6,7 @@ class Events:
     loginError = 'loginError'
     logoutSuccess = 'logoutSuccess'
     logoutError = 'logoutError'
+    preRequest = 'preRequest'
 
     def __init__(self):
         pass

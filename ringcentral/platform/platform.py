@@ -176,6 +176,8 @@ class Platform(Observable):
         request.headers['X-User-Agent'] = self._userAgent
         request.url = self.create_url(request.url, add_server=True)
 
+        self.trigger(Events.preRequest, {"request", request, "auth_data": self._auth.data(), "skip_auth_check": skip_auth_check})
+
         return request
 
     def send_request(self, request, skip_auth_check=False):
